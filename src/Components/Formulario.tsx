@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Formulario.css";
 import { useState } from "react";
 
@@ -42,6 +43,12 @@ export function Formulario({ setuser }: FormularioProps) {
         <button type="submit">Iniciar Sesión</button>
       </form>
       {error && <p>Todos los campos son obligatorios</p>}
+
+      <p>
+        ¿No tienes una cuenta? <Link to="/Registro">Regístrate aquí</Link>
+      </p>
     </section>
   );
 }
+
+export default Formulario;
