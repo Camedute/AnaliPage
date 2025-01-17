@@ -1,0 +1,182 @@
+.settings-container {
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    padding: 2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .settings-container.dark-mode {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+  
+  .settings-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dark-mode .settings-card {
+    background: #2d3748;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .settings-title {
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  .dark-mode .settings-title {
+    color: #e2e8f0;
+    border-bottom-color: #4a5568;
+  }
+  
+  .settings-section {
+    margin-bottom: 2rem;
+  }
+  
+  .settings-section h2 {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+  }
+  
+  .dark-mode .settings-section h2 {
+    color: #a0aec0;
+  }
+  
+  .setting-item {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dark-mode .setting-item {
+    background-color: #374151;
+  }
+  
+  .setting-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #4a5568;
+  }
+  
+  .dark-mode .setting-label {
+    color: #e2e8f0;
+  }
+  
+  /* Toggle switch styles */
+  .toggle {
+    width: 48px;
+    height: 24px;
+    background-color: #cbd5e0;
+    border-radius: 12px;
+    padding: 2px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle.active {
+    background-color: #4299e1;
+  }
+  
+  .toggle-slider {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle.active .toggle-slider {
+    transform: translateX(24px);
+  }
+  
+  /* Select input styles */
+  .select-input {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    width: 200px;
+    color: #4a5568;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dark-mode .select-input {
+    background-color: #4a5568;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .select-input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+  }
+  
+  /* Save button styles */
+  .settings-actions {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e2e8f0;
+    text-align: right;
+  }
+  
+  .dark-mode .settings-actions {
+    border-top-color: #4a5568;
+  }
+  
+  .save-button {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #3182ce;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 640px) {
+    .settings-container {
+      padding: 1rem;
+    }
+  
+    .settings-card {
+      padding: 1rem;
+    }
+  
+    .setting-item {
+      padding: 0.8rem;
+    }
+  
+    .setting-label {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+  
+    .select-input {
+      width: 100%;
+    }
+  }
