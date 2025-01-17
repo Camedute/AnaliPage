@@ -14,41 +14,91 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* Logo a la izquierda, enlaces a la derecha */
-  background-color: #343a40;
-  padding: 10px 20px;
+  background-color: #09a3fb; /* Azul como color de fondo */
+  padding: 15px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
+/* Logo */
 .navbar-brand {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
-  color: #ffffff;
+  color: #fbf8f8; /* Blanco */
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
 }
 
-.navbar ul {
+.navbar-brand i {
+  margin-right: 10px; /* Espacio entre ícono y texto */
+  font-size: 28px;
+}
+
+.navbar-brand:hover {
+  color: #f12a2a; /* Rojo en hover */
+}
+
+/* Enlaces del Navbar */
+.navbar-links {
   display: flex;
-  gap: 15px;
+  gap: 25px;
   list-style: none;
-  margin: 0;
-  padding: 0;
   margin-left: auto; /* Empuja los enlaces hacia la derecha */
 }
 
-.navbar li {
+.navbar-links li {
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el ícono y el texto */
 }
 
-.navbar li a {
+.navbar-links li a {
   text-decoration: none;
-  color: #ffffff;
-  transition: color 0.3s ease, transform 0.2s ease;
+  color: #fbf8f8; /* Blanco */
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  padding: 8px 15px; /* Agregar espaciado para los botones */
+  border-radius: 5px; /* Bordes redondeados */
 }
 
-.navbar li a:hover {
-  color: #ffc107;
+.navbar-links li a:hover {
+  color: #fbf8f8; /* Mantener color blanco */
+  background-color: #f12a2a; /* Rojo de fondo al hacer hover */
   transform: scale(1.1);
+}
+
+/* Estilo para los íconos */
+.navbar-links li i {
+  font-size: 22px; /* Tamaño de los íconos */
+  transition: transform 0.3s ease;
+}
+
+.navbar-links li a:hover i {
+  transform: scale(1.2); /* Aumentar tamaño del ícono al pasar el cursor */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-links {
+    gap: 15px;
+  }
+
+  .navbar-links li {
+    font-size: 16px;
+  }
+
+  .navbar-links li i {
+    font-size: 20px;
+  }
 }
 
 /* Elimina cualquier margen del body */

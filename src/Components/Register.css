@@ -1,43 +1,96 @@
+/* Importar una fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Contenedor principal del registro */
 .register-container {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', Arial, sans-serif;
+  text-align: center;
+}
+
+/* Título */
+.register-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333333;
+  font-weight: 600;
+}
+
+/* Grupo de formularios */
+.register-form-group {
+  margin-bottom: 15px;
+}
+
+/* Campos de entrada */
+.register-form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form-group input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  outline: none;
+}
+
+/* Mensaje de error */
+.register-error {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin: 5px 0;
+  text-align: left;
+}
+
+/* Botón de registro */
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.register-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.register-button:active {
+  background-color: #19692c;
+  transform: translateY(0);
+}
+
+/* Escalabilidad en pantallas pequeñas */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 15px;
   }
-  
+
   .register-container h2 {
-    margin-bottom: 20px;
     font-size: 1.5em;
-    color: #333;
   }
-  
-  .register-form-group {
-    margin-bottom: 10px;
-  }
-  
+
   .register-form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .register-error {
-    color: red;
-    font-size: 0.9em;
-    margin: 5px 0;
-  }
-  
-  .register-button {
-    width: 100%;
+    font-size: 0.9rem;
     padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
   }
-  
+
+  .register-button {
+    font-size: 0.9rem;
+  }
+}
