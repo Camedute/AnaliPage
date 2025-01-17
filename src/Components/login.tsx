@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
+import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,19 +10,14 @@ function Login() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    // Validación básica
     if (!email || !password) {
       setError("Both fields are required.");
       return;
     }
-
     if (!email.includes("@")) {
       setError("Invalid email format.");
       return;
     }
-
-    // Reset error and simulate login success
     setError("");
     setRedirect(true);
   };
@@ -31,39 +27,27 @@ function Login() {
   }
 
   return (
-    <div style={{ maxWidth: "300px", margin: "0 auto", padding: "20px", textAlign: "center" }}>
+    <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="login-form-group">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="login-form-group">
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            padding: "10px",
-            backgroundColor: "#007BFF",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
+        {error && <p className="login-error">{error}</p>}
+        <button type="submit" className="login-button">
           Login
         </button>
       </form>

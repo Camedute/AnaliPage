@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import Navbar from "../Components/Navegacion/Navbar";
 
 export function Home() {
   const [redirect, setRedirect] = useState(false);
@@ -15,7 +14,6 @@ export function Home() {
 
   return (
     <div>
-      <Navbar />
       <h1>Bienvenido a AnaliPage</h1>
       <button onClick={closeSession}>Cerrar Sesión</button>
     </div>

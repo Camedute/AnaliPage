@@ -1,34 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export const Navbar = () => {
   return (
-    <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container-fluid">
-                <Link className="navbar-brand" to="/Home">Analipage</Link>
-                <button className="navbar-toggler" type="button"        data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link active" to='/Home'>Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link active" to='/Perfil'>Perfil</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link active" to='/Ajustes'>Ajustes</Link>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-</nav>
-    </div>
-  )
-}
+    <header>
+      <nav className="navbar">
+        <Link className="navbar-brand" to="/Home">
+          Analipage
+        </Link>
+        <ul>
+          <li>
+            <Link to="/Home">Home</Link>
+          </li>
+          <li>
+            <Link to="/Perfil">Perfil</Link>
+          </li>
+          <li>
+            <Link to="/Ajustes">Ajustes</Link>
+          </li>
+          <li>
+            <Link to="/oldAnalisis">Análisis anteriores</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
 
 export default Navbar;

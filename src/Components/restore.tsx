@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Restore.css";
 
 function Restore() {
   const [email, setEmail] = useState("");
@@ -7,51 +8,35 @@ function Restore() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    // Validación básica
     if (!email) {
       setError("Email is required.");
       setSuccess("");
       return;
     }
-
     if (!email.includes("@")) {
       setError("Invalid email format.");
       setSuccess("");
       return;
     }
-
-    // Reset error and simulate restore success
     setError("");
     setSuccess("A password reset link has been sent to your email.");
   };
 
   return (
-    <div style={{ maxWidth: "300px", margin: "0 auto", padding: "20px", textAlign: "center" }}>
+    <div className="restore-container">
       <h2>Restore Password</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="restore-form-group">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {success && <p style={{ color: "green" }}>{success}</p>}
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            padding: "10px",
-            backgroundColor: "#ffc107",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
+        {error && <p className="restore-error">{error}</p>}
+        {success && <p className="restore-success">{success}</p>}
+        <button type="submit" className="restore-button">
           Send Reset Link
         </button>
       </form>

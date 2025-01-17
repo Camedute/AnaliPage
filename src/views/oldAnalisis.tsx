@@ -1,10 +1,10 @@
 import React from "react";
 
-function oldAnalisis(){
+function OldAnalisis(){
     return(
     <p>OldAnalisis</p>
 
     )
 };
 
-export default oldAnalisis;
+export default OldAnalisis;
