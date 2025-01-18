@@ -1,45 +1,49 @@
 /* Importar una fuente moderna */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
-/* Contenedor principal del formulario de restauración */
+/* Contenedor principal */
 .restore-container {
-  max-width: 360px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', Arial, sans-serif;
+  max-width: 400px;
+  margin: 5vh auto;
+  padding: 30px;
+  background: linear-gradient(145deg, #f9f9fc, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
   text-align: center;
 }
 
-/* Título */
 .restore-container h2 {
-  margin-bottom: 20px;
-  font-size: 1.8em;
+  font-size: 2rem;
   color: #333333;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.restore-subtitle {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 20px;
 }
 
 /* Grupo de formularios */
 .restore-form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Campos de entrada */
-.restore-form-group input {
+.restore-input {
   width: 100%;
   padding: 12px;
-  border: 1px solid #cccccc;
+  border: 1px solid #dcdce1;
   border-radius: 8px;
   font-size: 1rem;
-  box-sizing: border-box;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.restore-form-group input:focus {
+.restore-input:focus {
   border-color: #ffc107;
-  box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
   outline: none;
 }
 
@@ -47,7 +51,8 @@
 .restore-error {
   color: #e63946;
   font-size: 0.9rem;
-  margin: 5px 0;
+  margin-top: -10px;
+  margin-bottom: 15px;
   text-align: left;
 }
 
@@ -55,11 +60,12 @@
 .restore-success {
   color: #28a745;
   font-size: 0.9rem;
-  margin: 5px 0;
+  margin-top: -10px;
+  margin-bottom: 15px;
   text-align: left;
 }
 
-/* Botón de restauración */
+/* Botón */
 .restore-button {
   width: 100%;
   padding: 12px;
@@ -67,34 +73,37 @@
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .restore-button:hover {
   background-color: #e0a800;
-  transform: translateY(-2px);
+  transform: scale(1.03);
 }
 
 .restore-button:active {
   background-color: #c69500;
-  transform: translateY(0);
+  transform: scale(1);
 }
 
-/* Escalabilidad en pantallas pequeñas */
+/* Adaptabilidad para pantallas pequeñas */
 @media (max-width: 768px) {
   .restore-container {
-    padding: 15px;
+    padding: 20px;
   }
 
   .restore-container h2 {
-    font-size: 1.5em;
+    font-size: 1.8rem;
   }
 
-  .restore-form-group input {
+  .restore-subtitle {
     font-size: 0.9rem;
+  }
+
+  .restore-input {
     padding: 10px;
   }
 

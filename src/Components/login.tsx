@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import "./Login.css";
+import "./Login.css"; // Importar el nuevo estilo
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -8,16 +8,21 @@ function Login() {
   const [error, setError] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validación básica
     if (!email || !password) {
-      setError("Both fields are required.");
+      setError("Ambos datos son requeridos.");
       return;
     }
+
     if (!email.includes("@")) {
-      setError("Invalid email format.");
+      setError("El formato del Email es erroneo.");
       return;
     }
+
+    // Reset error and simulate login success
     setError("");
     setRedirect(true);
   };
@@ -28,27 +33,30 @@ function Login() {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <h2>¡Bienvenido!</h2>
+      <p className="login-subtitle">Por favor ingresa tu cuenta</p>
+      <form className="login-form" onSubmit={handleSubmit}>
         <div className="login-form-group">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="login-input"
           />
         </div>
         <div className="login-form-group">
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="login-input"
           />
         </div>
         {error && <p className="login-error">{error}</p>}
         <button type="submit" className="login-button">
-          Login
+          Ingresar
         </button>
       </form>
     </div>

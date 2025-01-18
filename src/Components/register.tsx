@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import "./Register.css";
+import "./Register.css"; // Importar el nuevo estilo
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -9,24 +9,29 @@ function Register() {
   const [error, setError] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!email || !password || !confirmPassword) {
-      setError("All fields are required.");
+      setError("Todos los datos son requeridos.");
       return;
     }
+
     if (!email.includes("@")) {
-      setError("Invalid email format.");
+      setError("El formato de Email es erroneo.");
       return;
     }
+
     if (password !== confirmPassword) {
-      setError("Passwords do not match.");
+      setError("Las contraseñas no coinciden.");
       return;
     }
+
     if (password.length < 6) {
-      setError("Password must be at least 6 characters long.");
+      setError("La contraseña debe tener mas de 6 caracteres.");
       return;
     }
+
     setError("");
     setRedirect(true);
   };
@@ -37,35 +42,39 @@ function Register() {
 
   return (
     <div className="register-container">
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+      <h2>Crea tu cuenta</h2>
+      <p className="register-subtitle">¡Ingresa a nuestros servicios!</p>
+      <form className="register-form" onSubmit={handleSubmit}>
         <div className="register-form-group">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="register-input"
           />
         </div>
         <div className="register-form-group">
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="register-input"
           />
         </div>
         <div className="register-form-group">
           <input
             type="password"
-            placeholder="Confirm Password"
+            placeholder="Confirmar contraseña"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            className="register-input"
           />
         </div>
         {error && <p className="register-error">{error}</p>}
         <button type="submit" className="register-button">
-          Register
+          Registrate
         </button>
       </form>
     </div>
