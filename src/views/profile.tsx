@@ -1,11 +1,14 @@
 import React from "react";
+import { useTheme } from "../Components/ThemeContext"; // Para el tema oscuro
 import "./profile.css";
 
 function Profile() {
+  const { darkMode } = useTheme(); // Obtener el estado del modo oscuro
+
   return (
-    <div className="profile-container">
-      <div className="profile-card">
-        <div className="profile-header">
+    <div className={`profile-container ${darkMode ? "dark-mode" : ""}`}>
+      <div className={`profile-card ${darkMode ? "dark-mode" : ""}`}>
+        <div className={`profile-header ${darkMode ? "dark-mode" : ""}`}>
           <div className="profile-cover"></div>
           <div className="profile-avatar">
             <img 
@@ -16,10 +19,10 @@ function Profile() {
           </div>
         </div>
 
-        <div className="profile-info">
+        <div className={`profile-info ${darkMode ? "dark-mode" : ""}`}>
           <h1 className="profile-name">Nombre del Usuario</h1>
           <p className="profile-title">Desarrollador Web</p>
-          
+
           <div className="profile-stats">
             <div className="stat">
               <span className="stat-value">125</span>
@@ -38,8 +41,8 @@ function Profile() {
           <div className="profile-bio">
             <h2>Sobre mí</h2>
             <p>
-              ¡Hola! Soy un desarrollador apasionado por crear experiencias web 
-              increíbles. Me encanta aprender nuevas tecnologías y compartir 
+              ¡Hola! Soy un desarrollador apasionado por crear experiencias web
+              increíbles. Me encanta aprender nuevas tecnologías y compartir
               conocimientos con la comunidad.
             </p>
           </div>

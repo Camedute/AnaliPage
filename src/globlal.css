@@ -1,0 +1,51 @@
+:root {
+  /* Variables para el tema claro */
+  --background-color: #f5f7fa;
+  --text-color: #2d3748;
+  --card-background-color: #ffffff;
+  --card-shadow-color: rgba(0, 0, 0, 0.1);
+  --primary-color: #4299e1;
+}
+
+.dark-mode {
+  /* Variables para el tema oscuro */
+  --background-color: #1a202c;
+  --text-color: #e2e8f0;
+  --card-background-color: #2d3748;
+  --card-shadow-color: rgba(0, 0, 0, 0.2);
+  --primary-color: #63b3ed;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.settings-card {
+  background-color: var(--card-background-color);
+  box-shadow: 0 4px 6px var(--card-shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Ajuste para el hover del botón, en vez de darken() usamos un valor más oscuro */
+button:hover {
+  background-color: #3182ce; /* Un color más oscuro para el hover */
+}
+
+/* Ajuste para el botón en el modo oscuro */
+body.dark-mode button:hover {
+  background-color: #4299e1; /* Un tono más oscuro en el modo oscuro */
+}

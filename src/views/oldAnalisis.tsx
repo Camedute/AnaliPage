@@ -1,12 +1,11 @@
+// Updated OldAnalisis.tsx
 import React, { useState } from 'react';
 import './oldAnalisis.css';
 
 function OldAnalisis() {
-  // Estado para manejar el análisis seleccionado y mostrar el modal
   const [selectedAnalysis, setSelectedAnalysis] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  // Datos de ejemplo - Reemplazar con datos reales de tu base de datos
   const analysisData = [
     {
       id: 1,
@@ -48,15 +47,13 @@ function OldAnalisis() {
     }
   ];
 
-  // Función para mostrar el detalle del análisis
   const showAnalysisDetail = (analysis: any) => {
     setSelectedAnalysis(analysis);
     setShowModal(true);
   };
 
-  // Función para iniciar un nuevo análisis
   const runNewAnalysis = () => {
-    alert('Iniciando nuevo análisis...'); // Reemplazar con tu lógica real
+    alert('Iniciando nuevo análisis...');
   };
 
   return (
@@ -95,7 +92,6 @@ function OldAnalisis() {
         </table>
       </div>
 
-      {/* Modal de Detalles */}
       {showModal && selectedAnalysis && (
         <div className="modal-overlay">
           <div className="modal-content">
