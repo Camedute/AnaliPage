@@ -1,122 +1,94 @@
 /* Home.css */
+:root {
+  --background-color: #f5f7fa;
+  --text-color: #333;
+  --button-bg: #4299e1;
+  --button-text: white;
+  --button-bg-hover: #3182ce;
+  --footer-text-color: #4a5568;
+}
+
 .home-container {
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding: 20px;
-  font-family: Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .home-container.dark-mode {
-  background: #121212; /* Fondo oscuro */
-  color: #e2e8f0; /* Texto claro en modo oscuro */
+  background-color: #1a202c;
+  color: #e2e8f0;
 }
 
 .card {
-  background: #ffffff;
-  border-radius: 12px;
+  background-color: white;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
   width: 100%;
-  max-width: 600px;
-  padding: 2rem;
-  margin: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 30px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .card.dark-mode {
-  background: #1f2937; /* Fondo oscuro */
-  color: #e2e8f0; /* Texto claro */
+  background-color: #2d3748;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 2rem;
+.home-title {
+  font-size: 2.5rem;
+  color: #2d3748;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.header h1 {
-  color: #2c3e50;
-  font-size: 2rem;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-.header.dark-mode h1 {
-  color: #e2e8f0; /* Texto claro en modo oscuro */
-}
-
-.content {
-  text-align: center;
-  margin-bottom: 2rem;
+.home-title.dark-mode {
+  color: #e2e8f0;
 }
 
 .welcome-text {
+  font-size: 1.2rem;
   color: #4a5568;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  transition: color 0.3s ease;
 }
 
 .welcome-text.dark-mode {
-  color: #e2e8f0; /* Texto claro en modo oscuro */
+  color: #e2e8f0;
 }
 
 .logout-button {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
+  margin-top: 20px;
+  padding: 10px 15px;
   font-size: 1rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .logout-button.dark-mode {
-  background-color: #cbd5e0;
-  color: #333;
+  background-color: #3182ce;
 }
 
 .logout-button:hover {
-  background-color: #c0392b;
-}
-
-.logout-button.dark-mode:hover {
-  background-color: #4a5568; /* Hover oscuro para mejor visibilidad */
+  background-color: var(--button-bg-hover);
 }
 
 .footer {
-  text-align: center;
-  padding-top: 1.5rem;
-  margin-top: 1.5rem;
-  border-top: 1px solid #eee;
+  margin-top: 30px;
 }
 
-.footer p {
-  color: #888;
-  font-size: 0.9rem;
-  margin: 0;
-  transition: color 0.3s ease;
+.footer-text {
+  font-size: 1rem;
+  color: var(--footer-text-color);
 }
 
-.footer.dark-mode p {
-  color: #e2e8f0; /* Texto claro en modo oscuro */
-}
-
-/* Responsive design */
-@media (max-width: 480px) {
-  .card {
-    padding: 1rem;
-  }
-
-  .header h1 {
-    font-size: 1.5rem;
-  }
-
-  .welcome-text {
-    font-size: 1rem;
-  }
+.footer-text.dark-mode {
+  color: #e2e8f0;
 }

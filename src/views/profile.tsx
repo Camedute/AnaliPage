@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "../Components/ThemeContext"; // Para el tema oscuro
+import { useTheme } from "../Components/ThemeContext"; // Hook para usar el tema
 import "./profile.css";
 
 function Profile() {
@@ -11,7 +11,7 @@ function Profile() {
         <div className={`profile-header ${darkMode ? "dark-mode" : ""}`}>
           <div className="profile-cover"></div>
           <div className="profile-avatar">
-            <img 
+            <img
               src="/api/placeholder/150/150"
               alt="Foto de perfil"
               className="avatar-img"
@@ -20,8 +20,12 @@ function Profile() {
         </div>
 
         <div className={`profile-info ${darkMode ? "dark-mode" : ""}`}>
-          <h1 className="profile-name">Nombre del Usuario</h1>
-          <p className="profile-title">Desarrollador Web</p>
+          <h1 className={`profile-name ${darkMode ? "dark-mode-text" : ""}`}>
+            Nombre del Usuario
+          </h1>
+          <p className={`profile-title ${darkMode ? "dark-mode-text" : ""}`}>
+            Desarrollador Web
+          </p>
 
           <div className="profile-stats">
             <div className="stat">
@@ -39,8 +43,10 @@ function Profile() {
           </div>
 
           <div className="profile-bio">
-            <h2>Sobre mí</h2>
-            <p>
+            <h2 className={`bio-title ${darkMode ? "dark-mode-text" : ""}`}>
+              Sobre mí
+            </h2>
+            <p className={`bio-text ${darkMode ? "dark-mode-text" : ""}`}>
               ¡Hola! Soy un desarrollador apasionado por crear experiencias web
               increíbles. Me encanta aprender nuevas tecnologías y compartir
               conocimientos con la comunidad.

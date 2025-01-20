@@ -1,235 +1,170 @@
-/* Profile.css */
+/* Estilos generales del perfil */
 .profile-container {
   min-height: 100vh;
-  background-color: #f5f7fa;
-  padding: 2rem;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  font-family: Arial, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: 'Roboto', sans-serif;
 }
 
 .profile-container.dark-mode {
-  background-color: #121212; /* Fondo oscuro */
-  color: #e2e8f0; /* Texto claro en modo oscuro */
+  background-color: #121212;
 }
 
 .profile-card {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
   width: 100%;
   max-width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  margin: 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .profile-card.dark-mode {
-  background: #2d3748; /* Fondo oscuro */
-  color: #e2e8f0; /* Texto claro */
+  background-color: #333;
+  color: #e2e8f0;
 }
 
 .profile-header {
   position: relative;
-  height: 200px;
-}
-
-.profile-cover {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-}
-
-.profile-cover.dark-mode {
-  background: linear-gradient(135deg, #444, #333); /* Gradiente más oscuro */
+  height: 250px;
+  background-color: #007bff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .profile-avatar {
   position: absolute;
-  bottom: -50px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   border: 5px solid white;
   border-radius: 50%;
-  overflow: hidden;
   width: 150px;
   height: 150px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .profile-info {
-  padding: 60px 30px 30px;
   text-align: center;
 }
 
-.profile-name {
-  font-size: 1.8rem;
-  color: #2d3748;
-  margin: 0;
-  padding: 10px 0;
+.profile-name,
+.profile-title,
+.bio-title,
+.bio-text {
+  transition: color 0.3s ease;
 }
 
-.profile-name.dark-mode {
-  color: #e2e8f0; /* Texto claro en modo oscuro */
+.profile-name {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #333;
 }
 
 .profile-title {
-  color: #718096;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.profile-title.dark-mode {
-  color: #cbd5e0; /* Texto más claro en modo oscuro */
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .profile-stats {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 20px 0;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  margin-bottom: 20px;
-}
-
-.profile-stats.dark-mode {
-  border-color: #444; /* Cambiar color de los bordes en modo oscuro */
+  justify-content: space-around;
+  margin-top: 1.5rem;
 }
 
 .stat {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  text-align: center;
 }
 
 .stat-value {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2d3748;
-}
-
-.stat-value.dark-mode {
-  color: #e2e8f0; /* Texto claro en modo oscuro */
+  color: #007bff;
 }
 
 .stat-label {
-  font-size: 0.9rem;
-  color: #718096;
-}
-
-.stat-label.dark-mode {
-  color: #cbd5e0; /* Texto más claro en modo oscuro */
+  color: #666;
 }
 
 .profile-bio {
+  margin-top: 2rem;
   text-align: left;
-  padding: 20px 0;
 }
 
-.profile-bio h2 {
-  color: #2d3748;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.bio-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-.profile-bio h2.dark-mode {
-  color: #e2e8f0; /* Texto claro en modo oscuro */
-}
-
-.profile-bio p {
-  color: #4a5568;
+.bio-text {
+  color: #666;
   line-height: 1.6;
 }
 
-.profile-bio p.dark-mode {
-  color: #cbd5e0; /* Texto más claro en modo oscuro */
-}
-
 .profile-contact {
+  margin-top: 2rem;
   display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 30px;
+  justify-content: space-evenly;
 }
 
 .edit-button, .message-button {
-  padding: 10px 25px;
+  background-color: #007bff;
+  color: white;
   border: none;
+  padding: 12px 24px;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.edit-button.dark-mode, .message-button.dark-mode {
-  background-color: #444; /* Botón oscuro */
+.edit-button:hover, .message-button:hover {
+  background-color: #0056b3;
 }
 
-.edit-button {
-  background-color: #4299e1;
-  color: white;
+.profile-container.dark-mode .edit-button, 
+.profile-container.dark-mode .message-button {
+  background-color: #444;
+  color: #e2e8f0;
 }
 
-.edit-button.dark-mode {
-  background-color: #333; /* Botón más oscuro */
+.profile-container.dark-mode .edit-button:hover, 
+.profile-container.dark-mode .message-button:hover {
+  background-color: #555;
 }
 
-.edit-button:hover {
-  background-color: #3182ce;
+.dark-mode-text {
+  color: #e2e8f0;
 }
 
-.edit-button.dark-mode:hover {
-  background-color: #444; /* Hover más oscuro */
+.profile-container.dark-mode .profile-name,
+.profile-container.dark-mode .profile-title,
+.profile-container.dark-mode .bio-title {
+  color: #e2e8f0;
 }
 
-.message-button {
-  background-color: #ebf4ff;
+.profile-container.dark-mode .profile-stats .stat-value {
   color: #4299e1;
 }
 
-.message-button:hover {
-  background-color: #e2effd;
+.profile-container.dark-mode .profile-stats .stat-label {
+  color: #a0aec0;
 }
 
-.message-button.dark-mode {
-  background-color: #555; /* Botón más oscuro */
-}
-
-/* Responsive design */
-@media (max-width: 640px) {
-  .profile-container {
-    padding: 1rem;
-  }
-
-  .profile-header {
-    height: 150px;
-  }
-
-  .profile-avatar {
-    width: 120px;
-    height: 120px;
-    bottom: -40px;
-  }
-
-  .profile-info {
-    padding: 50px 20px 20px;
-  }
-
-  .profile-stats {
-    gap: 20px;
-  }
-
-  .profile-contact {
-    flex-direction: column;
-    padding: 0 20px;
-  }
+.profile-container.dark-mode .bio-text {
+  color: #a0aec0;
 }

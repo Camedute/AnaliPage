@@ -19,17 +19,17 @@ export function Home() {
     <div className={`home-container ${darkMode ? "dark-mode" : ""}`}>
       <div className={`card ${darkMode ? "dark-mode" : ""}`}>
         <div className="header">
-          <h1>Bienvenido a AnaliPage</h1>
+          <h1 className={`home-title ${darkMode ? "dark-mode" : ""}`}>Bienvenido a AnaliPage</h1>
         </div>
 
         <div className="content">
-          <p className="welcome-text">
+          <p className={`welcome-text ${darkMode ? "dark-mode" : ""}`}>
             Explora nuestras características y disfruta de una experiencia única.
           </p>
 
-          <button 
-            onClick={closeSession} 
-            className="logout-button"
+          <button
+            onClick={closeSession}
+            className={`logout-button ${darkMode ? "dark-mode" : ""}`}
             aria-label="Cerrar sesión"
           >
             Cerrar Sesión
@@ -37,7 +37,7 @@ export function Home() {
         </div>
 
         <div className="footer">
-          <p>© 2025 AnaliPage. Todos los derechos reservados.</p>
+          <p className={`footer-text ${darkMode ? "dark-mode" : ""}`}>© 2025 AnaliPage. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>
