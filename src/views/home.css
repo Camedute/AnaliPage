@@ -1,4 +1,3 @@
-/* Home.css */
 :root {
   --background-color: #f5f7fa;
   --text-color: #333;
@@ -90,5 +89,45 @@
 }
 
 .footer-text.dark-mode {
+  color: #e2e8f0;
+}
+
+/* Estilos para Drag and Drop */
+.main {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  text-align: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.main.dragging {
+  border-color: #3182ce;
+  background-color: #e3f2fd;
+}
+
+.containerDragging {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.divCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #2d3748;
+  font-weight: bold;
+}
+
+.divCenter img {
+  margin-right: 10px;
+}
+
+.divCenter.dark-mode {
   color: #e2e8f0;
 }
