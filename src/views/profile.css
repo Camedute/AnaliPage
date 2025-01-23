@@ -10,7 +10,8 @@
 }
 
 .profile-container.dark-mode {
-  background-color: #121212;
+  background-color: #1a202c;
+  color: #e2e8f0;
 }
 
 .profile-card {
@@ -24,8 +25,8 @@
 }
 
 .profile-card.dark-mode {
-  background-color: #333;
-  color: #e2e8f0;
+  background-color: #2d3748;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .profile-header {

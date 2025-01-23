@@ -12,6 +12,9 @@ export function Home() {
   const [dragging, setDragging] = useState(false);
   const dragCounter = useRef(0);
 
+  // Estado para almacenar los archivos arrastrados
+  const [files, setFiles] = useState<File[]>([]);
+
   // Usar referencias para las funciones de eventos
   const handleDraginRef = useRef<(e: DragEvent) => void>();
   const handleDragRef = useRef<(e: DragEvent) => void>();
@@ -39,9 +42,11 @@ export function Home() {
       e.stopPropagation();
       setDragging(false);
       dragCounter.current = 0;
-      if (e.dataTransfer?.items && e.dataTransfer.items.length > 0) {
-        console.log("Archivos arrastrados", e.dataTransfer.items);
-        console.log(e.dataTransfer.items[0].getAsFile());
+
+      if (e.dataTransfer?.files && e.dataTransfer.files.length > 0) {
+        const droppedFiles = Array.from(e.dataTransfer.files); // Convertir FileList a Array
+        setFiles(droppedFiles); // Actualizar el estado con los archivos
+        console.log("Archivos arrastrados:", droppedFiles);
       }
     };
 
@@ -109,6 +114,21 @@ export function Home() {
               <div>Arrastra Archivos Aquí</div>
             )}
           </div>
+
+          {files.length > 0 && (
+            <div className="file-list">
+              <h3>Archivos cargados:</h3>
+              <ul>
+                {files.map((file, index) => (
+                  <li key={index}>
+                    <strong>Nombre:</strong> {file.name} <br />
+                    <strong>Tamaño:</strong> {(file.size / 1024).toFixed(2)} KB <br />
+                    <strong>Tipo:</strong> {file.type || "Desconocido"}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <button
             onClick={closeSession}
