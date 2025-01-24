@@ -169,3 +169,82 @@
 .profile-container.dark-mode .bio-text {
   color: #a0aec0;
 }
+
+/* Estilos para inputs y textarea */
+.profile-input, .profile-textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.profile-input:focus, .profile-textarea:focus {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+  outline: none;
+}
+
+/* Inputs y textarea en modo oscuro */
+.profile-container.dark-mode .profile-input, 
+.profile-container.dark-mode .profile-textarea {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  border: 1px solid #4a5568;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container.dark-mode .profile-input:focus, 
+.profile-container.dark-mode .profile-textarea:focus {
+  border-color: #4299e1;
+  background-color: #1a202c;
+}
+
+/* Estilos para botones de guardar y cancelar */
+.save-button, .cancel-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+/* Botones en modo oscuro */
+.profile-container.dark-mode .save-button {
+  background-color: #38a169;
+}
+
+.profile-container.dark-mode .save-button:hover {
+  background-color: #2f855a;
+}
+
+.profile-container.dark-mode .cancel-button {
+  background-color: #e53e3e;
+}
+
+.profile-container.dark-mode .cancel-button:hover {
+  background-color: #c53030;
+}
