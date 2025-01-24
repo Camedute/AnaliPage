@@ -107,6 +107,11 @@
   background-color: #e3f2fd;
 }
 
+.main.error {
+  border-color: #e53e3e; /* Rojo para indicar error */
+  background-color: #fff5f5; /* Fondo claro rojo */
+}
+
 .containerDragging {
   display: flex;
   flex-direction: column;
@@ -130,4 +135,10 @@
 
 .divCenter.dark-mode {
   color: #e2e8f0;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-weight: bold;
+  font-size: 1.1rem;
 }

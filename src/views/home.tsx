@@ -15,6 +15,9 @@ export function Home() {
   // Estado para almacenar los archivos arrastrados
   const [files, setFiles] = useState<File[]>([]);
 
+  // Estado para manejar errores
+  const [error, setError] = useState<string | null>(null);
+
   // Usar referencias para las funciones de eventos
   const handleDraginRef = useRef<(e: DragEvent) => void>();
   const handleDragRef = useRef<(e: DragEvent) => void>();
@@ -42,11 +45,20 @@ export function Home() {
       e.stopPropagation();
       setDragging(false);
       dragCounter.current = 0;
+      setError(null); // Reiniciar el mensaje de error
 
       if (e.dataTransfer?.files && e.dataTransfer.files.length > 0) {
-        const droppedFiles = Array.from(e.dataTransfer.files); // Convertir FileList a Array
-        setFiles(droppedFiles); // Actualizar el estado con los archivos
-        console.log("Archivos arrastrados:", droppedFiles);
+        const allowedExtensions = [".csv", ".xlsx"];
+        const droppedFiles = Array.from(e.dataTransfer.files).filter((file) =>
+          allowedExtensions.some((ext) => file.name.toLowerCase().endsWith(ext))
+        );
+
+        if (droppedFiles.length === 0) {
+          setError("Solo se permiten archivos .csv y .xlsx");
+        } else {
+          setFiles(droppedFiles); // Actualizar el estado con los archivos válidos
+          console.log("Archivos válidos arrastrados:", droppedFiles);
+        }
       }
     };
 
@@ -102,7 +114,7 @@ export function Home() {
             Explora nuestras características y disfruta de una experiencia única.
           </p>
 
-          <div ref={divDrag} className={dragging ? "main dragging" : "main"}>
+          <div ref={divDrag} className={dragging ? "main dragging" : error ? "main error" : "main"}>
             {dragging ? (
               <div className="containerDragging">
                 <div className="divCenter">
@@ -110,6 +122,8 @@ export function Home() {
                   &nbsp; Agregar Archivos
                 </div>
               </div>
+            ) : error ? (
+              <div className="error-message">{error}</div>
             ) : (
               <div>Arrastra Archivos Aquí</div>
             )}
